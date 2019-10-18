@@ -1,0 +1,14 @@
+<p>new appearance form</p>
+
+<%= form_for @appearance do |f|%>
+    <%=f.label(:rating)%>
+    <%=f.select :rating, 0..5 %>
+
+    <%=f.label(:episode_id)%>
+    <%=f.collection_select :episode_id, @episodes, :id, :number%>
+
+    <%=f.label(:guest)%> 
+    <%=f.collection_select :guest_id, @guests, :id, :name%>
+
+    <%=f.submit%>
+<% end %>

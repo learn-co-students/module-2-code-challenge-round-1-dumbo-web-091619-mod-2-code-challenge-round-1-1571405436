@@ -1,0 +1,13 @@
+<p>show episode</p>
+
+<%=@episode.date%>
+<br>
+<h1>Episode number<%=@episode.number%></h1>
+<br>
+<%@episode.appearances.each do |s|%>
+    <br>
+    <%=s.guest.name%>
+    <%=s.rating%>
+<% end %>
+
+
