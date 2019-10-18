@@ -1,0 +1,15 @@
+<h1> Show Page </h1>
+<%= @episode.number %>
+<Br>
+<%= @episode.date %>
+<br>
+<br>
+<h1> List of All Guests Who Participated To That Episode: </h1>
+<ul>
+<% @episode.guests.each do |g| %>
+
+  <li> <%= "#{g.name}, #{g.occupation}" %> </li>
+
+<% end %>
+
+</ul>

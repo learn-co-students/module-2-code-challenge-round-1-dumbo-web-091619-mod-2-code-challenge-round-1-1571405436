@@ -1,0 +1,18 @@
+<h1> Create an Appearance: </h1><br>
+<%= form_for(@appearance) do |f| %>
+
+ <%#=collection_select(:person, :city_id, City.all, :id, :name) %>
+
+<%= collection_select(:appearance, :episode_id, Episode.all, :id, :number) %>
+<br>
+<br>
+<%= collection_select(:appearance, :guest_id, Guest.all, :id, :name) %>
+<br>
+<br>
+<%= f.label :rating, "rate pls" %>
+<%= f.number_field :rating %>
+<br>
+<Br>
+<%= f.submit %>
+
+<% end %>
