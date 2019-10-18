@@ -1,0 +1,10 @@
+<%= flash[:notice] %>
+
+<%= @guest.name %>
+<%= @guest.occupation %>
+
+<% @episodes.each do |episode| %>
+  <br><%= episode.date %>
+  <br><%= episode.number %>
+<% end %>
+
