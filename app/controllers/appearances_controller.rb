@@ -2,7 +2,7 @@ class AppearancesController < ApplicationController
 
 
     def new
-        @appear = Appearance.new
+        @appearance = Appearance.new
         @guests = Guest.all
         @episodes = Episode.all
     end
