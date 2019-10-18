@@ -13,7 +13,7 @@ class AppearancesController < ApplicationController
             redirect_to episode_path(@appearance.episode)
         else
             flash[:error] = @item.full_messages
-            # redirect_to appearance_path
+            redirect_to appearance_path
         end
 
     end
