@@ -1,3 +1,11 @@
+<% if flash[:error] %>
+    <ul>
+    <% flash[:error].map do |error| %>
+        <li style = "color:red"><%= error %></li>
+    <% end %>
+    </ul>
+<% end %>
+
 <h1>New Appearance</h1>
 <%= form_for @appearance do |f| %>
     <%= f.label :guest_id %>
@@ -7,7 +15,7 @@
     <%= f.collection_select(:episode_id, Episode.all, :id, :date, prompt: true) %> <br>
 
     <%= f.label :rating, "Rate the Guest" %> 
-    <%= f.number_field :rating %> <br>
+    <%= f.select(:rating, 1..5) %> <br>
 
     <%= f.submit %>
 <% end %>

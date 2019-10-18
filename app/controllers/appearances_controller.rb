@@ -6,7 +6,14 @@ class AppearancesController < ApplicationController
 
     def create
         @appearance = Appearance.create(appearance_params)
-        redirect_to @appearance.episode
+        if @appearance.valid?
+            flash[:notice] = "Appearance successfully created"
+            redirect_to @appearance.episode
+        else
+            flash[:error] = @appearance.errors.full_messages
+            redirect_to new_appearance_path
+        end
+        
     end
 
     def appearance_params
