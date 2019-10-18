@@ -1,0 +1,14 @@
+<h1>Name: <%= @guest.name %></h1>
+<h2>Occupation: <%= @guest.occupation %></h2>
+<h3>Episodes:</h3>
+<% if @guest.episodes.empty? %>
+<p>This guest hasn't been on any episodes!</p>
+<% else %>
+<ul>
+    <% @guest.episodes.uniq.map do |episode| %>
+    <li>
+        <%= link_to episode.date, episode %>
+    </li>
+    <% end %>
+</ul>
+<% end %>
