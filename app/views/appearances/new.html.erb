@@ -1,0 +1,14 @@
+
+<%= form_for @appearance do |f| %>
+
+<%= f.label :name %>
+<%= f.text_field :name %>
+<%= f.label :name %>
+<%= f.text_field :occupation %>
+<%= f.label :occupation %>
+
+
+
+f.collection_select(:appearance, :guest_id, Guest.all, :id, :name)
+<%= f.submit %>
+<= end %>
