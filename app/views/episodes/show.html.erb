@@ -1,0 +1,10 @@
+<h1>Episode Date: <%= @episode.date %></h1>
+<h2>Episode Number: <%= @episode.number %></h2>
+<h3>Episode Guests:</h3>
+<ul>
+    <% @episode.guests.map do |guest| %>
+    <li>
+        <%= guest.name %>
+    </li>
+    <% end %>
+</ul>
