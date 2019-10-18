@@ -1,0 +1,19 @@
+<h1>Appearances</h1>
+
+
+<% if flash[:errors] %>
+  <% flash[:errors].each do |error| %>
+    <p style="color: red"> <%= error %></p>
+  <% end %>
+<% end %>
+
+<%= form_for @appearance do |f| %>
+    <%= f.label 'guest rating' %><br>
+    <%= f.number_field :guest_rating %><br>
+
+    Choose an episode: <%= collection_select(:appearance, :episode_id, Episode.all, :id, :number) %><br>
+    Choose an guest: <%= collection_select(:appearance, :guest_id, Guest.all, :id, :name) %>
+
+
+    <%= f.submit "Submit Appearance" %>
+<% end %>

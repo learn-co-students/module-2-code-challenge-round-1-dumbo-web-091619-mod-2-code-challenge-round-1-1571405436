@@ -1,0 +1,16 @@
+<h1><%= @guest.name %></h1>
+
+<h2>Occupation: <%= @guest.occupation %></h2>
+
+
+<!-- I know the following code is not in the deliverables, wanted to check if my association was working inversely -->
+<h2>Episodes I have been on:</h2>
+<ul>
+<% @episodes.each do |episode| %>
+   <li><p><%= link_to "Episode #{episode.number}", episode_path(episode) %></p></li>
+<% end %>
+</ul>
+
+<form>
+  <input type="button" onclick="window.location.href = '<%= guests_path %>';" value="Back To Guests"/>
+</form>
