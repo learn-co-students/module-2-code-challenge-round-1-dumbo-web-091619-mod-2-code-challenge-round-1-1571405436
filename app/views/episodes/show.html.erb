@@ -1,0 +1,7 @@
+<h1>Episode Page</h1>
+<h2>Episode: <%=@episode.number%></h2>
+<h3>Guests for this episode </h3>
+<ul>
+<% @episode.guests.each do |guest| %>
+    <li><%= guest.name %>
+<% end %>
