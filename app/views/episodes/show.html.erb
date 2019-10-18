@@ -1,0 +1,10 @@
+<%= content_tag :h1, @episode.title %>
+
+<!-- show all of the guest using @guests -->
+
+<ul>
+  <% @guests.each do |guest| %>
+    <%= content_tag :li, guest.name %>
+  <% end %>
+</ul>
+
