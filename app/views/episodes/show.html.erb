@@ -1,0 +1,10 @@
+<h1>Episode #<%= @episode.number%></h1>
+
+<h3>Casts:</h3>
+<% @episode.guests.each do |guest| %>
+  <b><%= guest.name %></b>
+  <p>Appered as an <%= guest.occupation %></p>
+<% end %>
+
+<p><%= link_to "Back to list of all episodes", episodes_path %></p>
+<p><%= link_to "Back to list of all guests", guests_path %></p>
