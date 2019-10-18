@@ -1,0 +1,14 @@
+<h1><%= "Episode #{@episode.number} - #{@episode.date.strftime("%B %d, %Y")}" %> </h1>
+
+<h3>Guest Appearance: <h3>
+<ul>
+    <% @episode.guests.each do |guest| %>
+        <li>
+        <%= guest.name %>
+        </li>
+    <% end %>
+</ul>
+
+
+
+<%= button_to "Delete", @episode, method: :delete %> 
