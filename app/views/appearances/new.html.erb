@@ -1,0 +1,13 @@
+<h1> Creaate an Appearance</h1>
+
+<%= form_for :appear do |f| %>
+<%=f.label :rating%>
+  <%= f.number_field :rating %> <br>
+  <%=f.label :Guest%>
+  <%= f.collection_select(:guest_id, @guests, :id, :name, :prompt => 'Select') %> <br>
+<%=f.label :Episode%>
+  <%= f.collection_select(:episode_id, @episodes, :id, :number, :prompt => 'Select') %>
+  <br>
+  
+  <%= f.submit %>
+<% end %>
