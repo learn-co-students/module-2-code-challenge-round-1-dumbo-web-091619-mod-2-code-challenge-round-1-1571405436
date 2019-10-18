@@ -1,0 +1,11 @@
+<h1>Add a New Guest to the Database! </h1>
+
+<%= form_for @guest do |f| %>
+    <%= f.label :name, "Enter the Guest Name:" %>
+    <%= f.text_field :name, required: true %>
+    <br><br>
+    <%= f.label :occupation, "Enter the Guest Occupation:" %>
+    <%= f.text_field :occupation, required: true %>
+    <br><br>
+    <%= f.submit "Save Your Entry!" %>
+<% end %>

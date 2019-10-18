@@ -2,7 +2,7 @@
 <h3> Guests: </h3>
 <ul>
 <% @guests.each do |guest| %>
-    <li> Name: <%= guest.name %></li>
+    <li> Name: <%= link_to guest.name, guest_path(guest) %></li>
     <li> Occupation: <%= guest.occupation %></li> 
     <br><br>
 <% end %>

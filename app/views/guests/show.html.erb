@@ -2,3 +2,20 @@
 
 <label> Occupation: </label>
 <%= @guest.occupation %>
+<br><br>
+<h4> Additional Info: </h4>
+<label> Daily Show Appearances: </label>
+<ul>
+<% if @guest.episodes.length > 0 %>
+    <% @guest.episodes.each do |episode| %>
+        <li><%= link_to "Episode #{episode.number} - #{episode.date}", episode_path(episode) %></li>
+    <% end %>
+<% else %>
+    <p> This guest does not have any Daily Show appearances recorded in the database! Would you like to add one? </p>
+    <%= link_to "Add A Daily Show guest appearance to the database!", new_appearance_path %>
+<% end %>
+</ul>
+<br><br><br>
+<p> Do you know something we don't? Help us out! </p>
+<%= link_to "Edit Guest Info", edit_guest_path(@guest) %>
+<br><br><br>
