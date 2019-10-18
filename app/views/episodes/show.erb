@@ -1,0 +1,31 @@
+<h1>an episode </h1>
+
+
+
+<br>
+
+<h2>episode date and time:</h2>
+<%= @episode.date %>
+<br>
+<%= @episode.number %>
+
+<br>
+<h1>all the guests for this episode</h1>
+<% @episode.guests.each do |guest|%>
+<%= guest.name %>
+<%= guest.occupation %>
+<% end%>
+
+
+
+
+
+<br>
+
+
+
+
+
+
+<br>
+# accidently deleted the code for this proabably in my bin

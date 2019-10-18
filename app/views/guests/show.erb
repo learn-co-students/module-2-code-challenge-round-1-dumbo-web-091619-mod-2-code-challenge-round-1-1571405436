@@ -1,0 +1,12 @@
+a guest
+
+<%= @guest.name %>
+
+<%= @guest.occupation %>
+<br>
+<% @guest.appearances.each do |app| %>
+<%= app.guest.name %>
+<%= app.episode.date %>
+<%= app.rating %>
+
+<% end%>
