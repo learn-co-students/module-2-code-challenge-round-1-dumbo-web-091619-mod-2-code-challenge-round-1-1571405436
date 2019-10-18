@@ -1,0 +1,15 @@
+
+<br>
+<br>
+
+<% if flash[:errors] %>
+	<% flash[:errors].each do |message| %>
+		<%= message %>
+		<br>
+		<br>
+	<% end %>
+<% end %>
+
+<%= render 'appearance_form' %>
+
+<%= button_to 'Cancel', appearances_path, method: :get %>

@@ -1,0 +1,18 @@
+<h1><%= @guest.name %>'s Profile</h1>
+
+Name: <%= @guest.name %>
+<br>
+Occupation:  <%= @guest.occupation %>
+<br>
+<br>
+
+<% if @guest.episodes.length == 0 %>
+	This Guest has not appeared in any episodes.
+<% else %>
+	This Guest has appeared in the following episodes:
+	<br>
+	<% @guest.episodes.each { |episode| %>
+		<%= link_to "Episode Number #{episode.number}, #{episode.date.strftime("%B %d, %Y")}", episode_path(episode)  %> 
+		<br>
+	<% } %>
+<% end %>
