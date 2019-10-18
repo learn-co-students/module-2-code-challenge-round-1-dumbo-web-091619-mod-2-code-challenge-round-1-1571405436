@@ -1,0 +1,20 @@
+<h1>Hello <%= @guest.name%></h1>
+
+<h3>You are an <%= @guest.occupation%></h3>
+
+# Hope I can eat some tacose for this extra loop
+
+<h3>My epperances:</h3>
+<% @guest.episodes.each do |episode| %>
+  <p>===================</p>
+  <p><%= episode.date %></p>
+  <p><%= episode.number %></p>
+  <% @list += + 1 %>
+
+<% end %>
+
+<p>Total number of my appearances: <%= @list %><p>
+
+
+<p><%= link_to "Back to list of all episodes", episodes_path %></p>
+<p><%= link_to "Back to list of all guests", guests_path %></p>
