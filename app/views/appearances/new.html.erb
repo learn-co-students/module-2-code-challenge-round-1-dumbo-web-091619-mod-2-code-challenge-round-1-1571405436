@@ -1,0 +1,10 @@
+<h1>Guest Appearance Form</h1>
+<%= form_for @appearance do |f| %>    
+    <%= f.collection_select :guest_id, @guests, :id, :name %>
+
+    <%= f.number_field :guest_rating %>
+
+    <%= f.collection_select :episode_id, @episodes, :id, :date %>
+
+    <%= f.submit %>
+<%end %>
