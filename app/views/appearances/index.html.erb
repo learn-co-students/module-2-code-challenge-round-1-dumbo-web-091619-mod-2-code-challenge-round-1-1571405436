@@ -1,0 +1,9 @@
+<h1>All Appearances</h1>
+
+<ul>
+  <% @appearances.each do |appearance| %>
+    <li><%= appearance.guest.name %></li>
+    <li><%= appearance.episode.date %></li>
+    <%= link_to "Appearance", appearance %>
+  <% end %>
+</ul>
